@@ -1,5 +1,6 @@
 class FacebooksController < ApplicationController
   def index
+    @facebooks = Facebook.all
   end
 
   def new
@@ -14,7 +15,7 @@ class FacebooksController < ApplicationController
    private
 
    def fb_params
-     params.require(:facebook).permit(:name,:content,:image)
+     params.require(:facebook).permit(:name,:content,:image,:image_cache)
    end
 
 end
