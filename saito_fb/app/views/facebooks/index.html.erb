@@ -1,4 +1,5 @@
 <h1>投稿一覧</h1>
+<<p><%= notice %></p>
 
 <table>
   <tr>
@@ -10,9 +11,11 @@
 <tr>
   <td><%= facebook.name %></td>
   <td><%= facebook.content %></td>
-  <td><%= image_tag facebook.image.url %></td>
+  <td><%= image_tag facebook.image.url ,size:"100x100" %></td>
+  <td><%= link_to "ブログを編集する", edit_facebook_path(facebook.id) %></td>
 </tr>
 <% end %>
 </table>
 
 <%= link_to "新規投稿画面に戻る",new_facebook_path %>
+<td><%= image_tag facebook.image.url ,size:"100x100" %></td>
