@@ -1,9 +1,9 @@
 class FacebooksController < ApplicationController
+  before_action :set_facebook,only:[:edit,:update,:destroy]
 
   def index
     @facebooks = Facebook.all
   end
-
   def new
     @facebook = Facebook.new
   end
@@ -16,17 +16,18 @@ class FacebooksController < ApplicationController
       end
   end
   def edit
-    @facebook=Facebook.find(params[:id])
   end
   def update
-   @facebook = Facebook.find(params[:id])
    if @facebook.update(fb_params)
      redirect_to facebooks_path
    else
      render 'edit'
    end
-  end
-end
+ end
+ def destroy
+   @facebook.destroy
+   redirect_to facebooks_path
+ end
 
 
 
@@ -35,3 +36,7 @@ end
    def fb_params
      params.require(:facebook).permit(:name,:content,:image,:image_cache)
    end
+   def set_facebook
+     @facebook = Facebook.find(params[:id])
+   end
+ end

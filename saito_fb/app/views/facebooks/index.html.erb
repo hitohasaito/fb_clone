@@ -3,7 +3,7 @@
 
 <table>
   <tr>
-    <th>タイトル</th>
+    <th>名前</th>
     <th>内容</th>
   </tr>
 
@@ -13,9 +13,9 @@
   <td><%= facebook.content %></td>
   <td><%= image_tag facebook.image.url ,size:"100x100" %></td>
   <td><%= link_to "ブログを編集する", edit_facebook_path(facebook.id) %></td>
+  <td><%= link_to "ブログを削除する", facebook_path(facebook.id), method: :delete, data: {confirm: "本当に編集していいですか？"}  %></td>
 </tr>
 <% end %>
 </table>
 
-<%= link_to "新規投稿画面に戻る",new_facebook_path %>
-<td><%= image_tag facebook.image.url ,size:"100x100" %></td>
+<%= link_to "新規投稿画面に戻る", new_facebook_path %>

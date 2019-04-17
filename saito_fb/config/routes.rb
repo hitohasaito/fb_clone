@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources:facebooks
+  resources :facebooks
 end
