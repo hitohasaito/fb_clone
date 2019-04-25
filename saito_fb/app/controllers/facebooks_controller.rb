@@ -5,15 +5,22 @@ class FacebooksController < ApplicationController
     @facebooks = Facebook.all
   end
   def new
-    @facebook = Facebook.new
+    if params[:back]
+      @facebook = Facebook.new(fb_params)
+    else
+      @facebook = Facebook.new
+    end
   end
   def create
-     @facebook=Facebook.new(fb_params)
+     @facebook = Facebook.new(fb_params)
       if @facebook.save
         redirect_to new_facebook_path
       else
         render "new"
       end
+  end
+  def show
+    @facebook = Facebook.find(fb_params)
   end
   def edit
   end
@@ -21,20 +28,22 @@ class FacebooksController < ApplicationController
    if @facebook.update(fb_params)
      redirect_to facebooks_path
    else
-     render 'edit'
+     render "edit"
    end
- end
- def destroy
+  end
+  def destroy
    @facebook.destroy
    redirect_to facebooks_path
- end
-
+  end
+  def confirm
+   @facebook = Facebook.new(fb_params)
+  end
 
 
    private
 
    def fb_params
-     params.require(:facebook).permit(:name,:content,:image,:image_cache)
+     params.require(:facebook).permit(:name,:content,:image,:image_cache,:back)
    end
    def set_facebook
      @facebook = Facebook.find(params[:id])
