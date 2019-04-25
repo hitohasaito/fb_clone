@@ -14,6 +14,6 @@
     <%= form.file_field :image %>
     <%= image_tag(@facebook.image.url) if @facebook.image && @facebook.image.url %>
     <%= form.hidden_field :image_cache %>
-    <%= form.submit "画像を変更" %>
+    <%= form.submit "投稿する" %>
   <% end %>
   </div>

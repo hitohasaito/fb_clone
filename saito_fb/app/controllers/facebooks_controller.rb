@@ -37,6 +37,7 @@ class FacebooksController < ApplicationController
   end
   def confirm
    @facebook = Facebook.new(fb_params)
+   render "new" if @facebook.invalid?
   end
 
 
