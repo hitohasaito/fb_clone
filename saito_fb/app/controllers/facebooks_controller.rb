@@ -19,8 +19,6 @@ class FacebooksController < ApplicationController
       render "new"
     end
   end
-  def show
-    @facebook = Facebook.find(fb_params)
   end
   def edit
   end
