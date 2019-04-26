@@ -19,7 +19,6 @@ class FacebooksController < ApplicationController
       render "new"
     end
   end
-  end
   def edit
   end
   def update
