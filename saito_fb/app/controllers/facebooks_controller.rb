@@ -38,6 +38,7 @@ class FacebooksController < ApplicationController
   end
 
 
+  
   private
 
   def fb_params
