@@ -38,11 +38,11 @@ class FacebooksController < ApplicationController
   end
 
 
-  
+
   private
 
   def fb_params
-    params.require(:facebook).permit(:name,:content,:image,:image_cache,:back)
+    params.require(:facebook).permit(:title,:content,:image,:image_cache,:back)
   end
   def set_facebook
     @facebook = Facebook.find(params[:id])

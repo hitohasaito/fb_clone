@@ -1,15 +1,15 @@
 <h1>ブログを編集する</h1>
 
 <%= form_with(model: @facebook, local: true) do |form| %>
-  <div class="fb_name">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="fb_content">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
   </div>
-  <div class="fb_name">
+  <div class="fb_content">
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
-  <div class="fb_name">
+  <div class="fb_content">
     <%= form.label :image %>
     <%= form.file_field :image %>
     <%= image_tag(@facebook.image.url) if @facebook.image && @facebook.image.url %>
