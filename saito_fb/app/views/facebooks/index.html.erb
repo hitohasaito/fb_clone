@@ -12,6 +12,7 @@
     <td><%= facebook.title %></td>
     <td><%= facebook.content %></td>
     <td><%= image_tag facebook.image.url ,size:"100x100" %></td>
+    <td><%= facebook.user.name %></td>
     <td><%= link_to "ブログを編集する", edit_facebook_path(facebook.id) %></td>
     <td><%= link_to "ブログを削除する", facebook_path(facebook.id), method: :delete, data: {confirm: "本当に編集していいですか？"}  %></td>
   </tr>

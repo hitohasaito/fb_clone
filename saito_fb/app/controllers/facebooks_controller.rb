@@ -13,6 +13,7 @@ class FacebooksController < ApplicationController
   end
   def create
     @facebook = Facebook.new(fb_params)
+    @facebook.user_id = current_user.id
     if @facebook.save
       redirect_to new_facebook_path
     else
@@ -34,6 +35,7 @@ class FacebooksController < ApplicationController
   end
   def confirm
     @facebook = Facebook.new(fb_params)
+    @facebook.user_id = current_user.id
     render "new" if @facebook.invalid?
   end
 
