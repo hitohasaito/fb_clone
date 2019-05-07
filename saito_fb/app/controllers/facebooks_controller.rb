@@ -10,6 +10,7 @@ class FacebooksController < ApplicationController
     else
       @facebook = Facebook.new
     end
+    @facebook.user_id = current_user.id
   end
   def create
     @facebook = Facebook.new(fb_params)
@@ -38,8 +39,6 @@ class FacebooksController < ApplicationController
     @facebook.user_id = current_user.id
     render "new" if @facebook.invalid?
   end
-
-
 
   private
 

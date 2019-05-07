@@ -1,16 +1,16 @@
-<h1>Facebook</h1>
+<h1>投稿を作成</h1>
+<h2><%=@facebook.user.name %></h2>
 <%= form_with(model: @facebook, local: true, url: choose_new_or_edit) do |form| %>
 <% if @facebook.errors.any? %>
-<div id="error_explanation">
-  <h2><%= @facebook.errors.count %>件のエラーがあります。</h2>
-  <ul>
-    <% @facebook.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
+  <div id="error_explanation">
+    <h2><%= @facebook.errors.count %>件のエラーがあります。</h2>
+      <ul>
+        <% @facebook.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+  </div>
 <% end %>
-
 <div class="fb_content">
   <%= form.label :title %>
   <%= form.text_field :title %>
@@ -25,7 +25,6 @@
   <%= form.file_field :image %>
   <%= form.hidden_field :image_cache %>
 </div>
-<%= form.submit "投稿" %>
-<%= link_to "ブログ一覧",facebooks_path %>
-
-<% end %>
+  <%= form.submit "投稿" %>
+  <%= link_to "ブログ一覧",facebooks_path %>
+  <% end %>
