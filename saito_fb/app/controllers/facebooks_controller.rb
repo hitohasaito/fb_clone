@@ -1,6 +1,5 @@
 class FacebooksController < ApplicationController
   before_action :set_facebook,only:[:edit,:update,:destroy]
-
   def index
     @facebooks = Facebook.all
   end
