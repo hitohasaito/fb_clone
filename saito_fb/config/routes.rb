@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   resources :facebooks do
     collection do
     post :confirm
+    end
+  end
   resources :users
   resources :sessions
-  end
-end
+  root "users#new "
 end

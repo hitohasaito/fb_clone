@@ -1,23 +1,23 @@
 <h1>以下の内容で送信します</h1>
 <%= form_with(model: @facebook, local: true ,url: facebooks_path) do |form| %>
-<div class="fb_content">
-  <%= form.hidden_field :title %>
-  <%= form.hidden_field :content %>
-  <%= form.hidden_field image_tag(@facebook.image.url) if @facebook.image && @facebook.image.url %>
-  <%= form.hidden_field :image_cache %>
-</div>
-  <p>投稿者:<%= @facebook.title %></p>
-  <p>投稿内容:<%= @facebook.content %></p>
-  <p>画像:<%= image_tag @facebook.image.url ,size:"100x100" %></p>
-  <%= form.submit "登録する"%>
+　　<div class="fb_content">
+  　　<%= form.hidden_field :title %>
+  　　<%= form.hidden_field :content %>
+  　　<%= form.hidden_field image_tag(@facebook.image.url) if @facebook.image && @facebook.image.url %>
+  　　<%= form.hidden_field :image_cache %>
+　　</div>
+  　<p>投稿者:<%= @facebook.title %></p>
+  　<p>投稿内容:<%= @facebook.content %></p>
+  　<p>画像:<%= image_tag @facebook.image.url ,size:"100x100" %></p>
+  　<%= form.submit "登録する"%>
 <% end %>
 
 <%= form_with(model: @facebook, local: true, url: new_facebook_path,method: "get") do |form| %>
-<div class="fb_content">
-  <%= form.hidden_field :title %>
-  <%= form.hidden_field :content %>
-  <%= form.hidden_field image_tag(@facebook.image.url) if @facebook.image && @facebook.image.url %>
-  <%= form.hidden_field :image_cache %>
-</div>
-<%= form.submit "戻る", name: 'back'%>
+　　<div class="fb_content">
+  　　<%= form.hidden_field :title %>
+  　　<%= form.hidden_field :content %>
+  　　<%= form.hidden_field image_tag(@facebook.image.url) if @facebook.image && @facebook.image.url %>
+  　　<%= form.hidden_field :image_cache %>
+　　</div>
+　　<%= form.submit "戻る", name: 'back'%>
 <% end %>
