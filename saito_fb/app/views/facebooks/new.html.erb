@@ -1,15 +1,15 @@
 <h1>投稿を作成</h1>
 <h2><%=@facebook.user.name %></h2>
 <%= form_with(model: @facebook, local: true, url: choose_new_or_edit) do |form| %>
-　　<% if @facebook.errors.any? %>
-  　　<div id="error_explanation">
-    　　<h2><%= @facebook.errors.count %>件のエラーがあります。</h2>
+  <% if @facebook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @facebook.errors.count %>件のエラーがあります。</h2>
       　　<ul>
         　　<% @facebook.errors.full_messages.each do |msg| %>
           　　<li><%= msg %></li>
         　　<% end %>
       　　</ul>
-  　　</div>
+  　</div>
   <% end %>
   <div class="fb_content">
     <%= form.label :title %>

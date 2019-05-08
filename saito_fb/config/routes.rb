@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     end
   end
   resources :users
+  root 'users#new' 
   resources :sessions
-  root "users#new "
 end
