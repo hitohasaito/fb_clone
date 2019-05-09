@@ -6,9 +6,9 @@
   　　<%= form.hidden_field image_tag(@facebook.image.url) if @facebook.image && @facebook.image.url %>
   　　<%= form.hidden_field :image_cache %>
 　　</div>
-  　<p>投稿者:<%= @facebook.title %></p>
-  　<p>投稿内容:<%= @facebook.content %></p>
-  　<p>画像:<%= image_tag @facebook.image.url ,size:"100x100" %></p>
+  　<p>Title:<%= @facebook.title %></p>
+  　<p>Content:<%= @facebook.content %></p>
+  　<p>image:<%= image_tag @facebook.image.url ,size:"100x100" %></p>
   　<%= form.submit "登録する"%>
 <% end %>
 
