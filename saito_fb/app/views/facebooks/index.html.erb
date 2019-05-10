@@ -2,10 +2,10 @@
 <% @facebooks.each do |facebook| %>
   <div class="list-group">
     <a class="list-group-item">
-      <h4 class="list-group-item-text"><%= facebook.user.name %></h4>
-		  <h3 class="list-group-item-heading"><%= facebook.title %></h3>
-		  <p class="list-group-item-text"><%= facebook.content %></p>
-      <p class="list-group-item-text"><%= image_tag facebook.image.url ,size:"100x100" %></p>
+      <h4 class="list-group-item-text">投稿者:<%= facebook.user.name %></h4>
+		  <h4 class="list-group-item-heading">タイトル:<%= facebook.title %></h4>
+		  <p class="list-group-item-text">内容:<%= facebook.content %></p>
+      <p class="list-group-item-text">画像:<%= image_tag facebook.image.url ,size:"100x100" %></p>
     　<%= link_to "ブログを編集する", edit_facebook_path(facebook.id) %>
     　<%= link_to "ブログを削除する", facebook_path(facebook.id), method: :delete, data: {confirm: "本当に削除していいですか？"}  %>
 	  </a>
