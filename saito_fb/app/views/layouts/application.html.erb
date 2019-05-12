@@ -24,7 +24,7 @@
           <div class="collapse navbar-collapse" id="navbarFacebook">
             <ul class="nav navbar-nav">
               <% if logged_in? %>
-        	      <li><%= link_to "Create　Post", new_facebook_path %></li>
+        	      <li><%= link_to "CreatePost", new_facebook_path %></li>
         	      <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
               <% else %>
                 <li><%= link_to "Sign up", new_user_path %></li>
@@ -35,9 +35,11 @@
         </div>
       </nav>
     </header>
+    <div class="center">
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
     <%= yield %>
+    </div>
   </body>
 </html>
